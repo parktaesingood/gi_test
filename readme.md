@@ -120,6 +120,32 @@ Remote Repo   -> Local Repo      : git pull
     - `$ git reset <commit_id>` : commit_id로 프로젝트를 되돌린다는 뜻
     - `$ git revert <commit_id>` : commit_id에 반영된 내용을 취소한다는 뜻
     - 여러 내역 revert : `$ git revert <start_id>..<end_id>`
-        - 역순ㅇ로 하나씩 Commit Revert 가능
+        - 역순으로 하나씩 Commit Revert 가능
+
+## 3. Git Branch
+1. 브랜치의 조회, 생성, 삭제와 관련된 명령어
+
+- 조회
+    - `$ git branch` : Local Repo의 브랜치 목록 확인
+    - `$ git branch -r` : Remote Repo의 브랜치 목록 확인
+- 생성
+    - `$ git branch <브랜치명>` : 새로운 브랜치 생성
+    - `$ git branch <브랜치명> <commit_id>` : 특정 Commit 기준으로 브랜치 생성
+- 삭제
+    - `$ git branch -d <브랜치명>` : 병합된 브랜치 삭제 가능
+    - `$ git branch -D <브랜치명>` : 강제로 브랜치 삭제
+
+### git switch
+
+- 현재 브랜치에서 다른 브랜치로 __HEAD__ 를 이동하는 명령어
+    - `$ git switch <브랜치명>` : 다른 브랜치로 이동
+    - `$ git switch -c <브랜치명>` : 브랜치 새로 생성 후 이동
+    - `$ git switch -c <브랜치명> <commit_id>` : 특정 commit 기준으로 브랜치 새로 생성 후 이동
+
+
+
+## Head
+현재 브랜치의 최신 commit
+
 
 
