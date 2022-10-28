@@ -101,7 +101,7 @@ Remote Repo   -> Local Repo      : git pull
  
 ### 2. 과거 작업으로 돌아가기
 
-<<<<<<< HEAD
+
 #### Reset
     * 프로젝트를 특정 commit(버전)으로 되돌림
     - 특정 commit으로 되돌아갔을때, 해당 commit이후 쌓았던 commit들은 전부 사라짐
@@ -111,3 +111,15 @@ Remote Repo   -> Local Repo      : git pull
         --mixed : 해당 커밋으로 되돌아가고 되돌아간 커밋 이후의 파일들은 working Directory로 돌려놓음
         --hard : 되돌아간 커밋 이후의 파일들은 모두 working Directory에서 삭제  -> 사용시 주의!!! 왠만하면 안써
         - `git reflog` 명령어는 reset 하기 전의 과거 커밋을 모두 조회 가능
+
+#### revert
+
+- 이전 commit을 취소하는 역할
+- reset은 commit 내역을 삭제하지만 revert는 삭제했다는 새로운 commit을 생성
+- 명령어 : `$ git revert <commit_id>`
+    - `$ git reset <commit_id>` : commit_id로 프로젝트를 되돌린다는 뜻
+    - `$ git revert <commit_id>` : commit_id에 반영된 내용을 취소한다는 뜻
+    - 여러 내역 revert : `$ git revert <start_id>..<end_id>`
+        - 역순ㅇ로 하나씩 Commit Revert 가능
+
+
